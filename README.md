@@ -4,11 +4,11 @@
 this python script is a work-around for a issue that ASUS EeeBook X205TA
 Japanese Keyboard is not inputtable some keys (such as yen, pipe, underscore, ..).
 
-these keys are recognized by kernel's HID (you can watch /dev/hidraw0 and input these keys),
-but hid-input driver doesn't have mapping from hid input to scancode.
+these keys are recognized by kernel's HID (watch /dev/hidraw0 and input these keys),
+but hid-input driver doesn't have mapping from HID to scancode.
 
-this python script has running on userland, reading /dev/hidraw0, if detect yen or backslash,
-this script fire key event via uinput,
+this script has running on userland, reading /dev/hidraw0, if detect yen or backslash,
+this script fire key events via uinput.
 
 ## prerequisite
 
@@ -28,7 +28,7 @@ python-evdev (for uinput)
 3. activate virtualenv
 `$ source bin/activate`
 4. install dependencies
-`$ pip install -r requirements.txt
+`$ pip install -r requirements.txt`
 5. exec on root privilege
 `$ sudo python main.py`
 
